@@ -17,4 +17,6 @@ struct japanese_letter_gameApp: App {
         }
         .modelContainer(for: Item.self)
     }
+    
+    func press() {}
 }

@@ -15,6 +15,8 @@
 		0BD378332A9F895E008849D5 /* japanese_letter_gameTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BD378322A9F895E008849D5 /* japanese_letter_gameTests.swift */; };
 		0BD3783D2A9F895E008849D5 /* japanese_letter_gameUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BD3783C2A9F895E008849D5 /* japanese_letter_gameUITests.swift */; };
 		0BD3783F2A9F895E008849D5 /* japanese_letter_gameUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BD3783E2A9F895E008849D5 /* japanese_letter_gameUITestsLaunchTests.swift */; };
+		0BD3784C2A9F8F24008849D5 /* characters.json in Resources */ = {isa = PBXBuildFile; fileRef = 0BD3784B2A9F8F24008849D5 /* characters.json */; };
+		0BD3784D2A9F8F24008849D5 /* characters.json in Resources */ = {isa = PBXBuildFile; fileRef = 0BD3784B2A9F8F24008849D5 /* characters.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +48,7 @@
 		0BD378382A9F895E008849D5 /* japanese-letter-gameUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "japanese-letter-gameUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0BD3783C2A9F895E008849D5 /* japanese_letter_gameUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = japanese_letter_gameUITests.swift; sourceTree = "<group>"; };
 		0BD3783E2A9F895E008849D5 /* japanese_letter_gameUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = japanese_letter_gameUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		0BD3784B2A9F8F24008849D5 /* characters.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = characters.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +103,7 @@
 				0BD378212A9F895C008849D5 /* ContentView.swift */,
 				0BD378232A9F895C008849D5 /* Item.swift */,
 				0BD378252A9F895E008849D5 /* Assets.xcassets */,
+				0BD3784B2A9F8F24008849D5 /* characters.json */,
 				0BD378272A9F895E008849D5 /* Preview Content */,
 			);
 			path = "japanese-letter-game";
@@ -234,6 +238,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0BD3784C2A9F8F24008849D5 /* characters.json in Resources */,
 				0BD378292A9F895E008849D5 /* Preview Assets.xcassets in Resources */,
 				0BD378262A9F895E008849D5 /* Assets.xcassets in Resources */,
 			);
@@ -243,6 +248,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0BD3784D2A9F8F24008849D5 /* characters.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

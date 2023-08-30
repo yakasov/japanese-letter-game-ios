@@ -13,46 +13,32 @@ struct ContentView: View {
     @Query private var items: [Item]
 
     var body: some View {
-        NavigationSplitView {
-            List {
-                ForEach(items) { item in
-                    NavigationLink {
-                        Text("Item at \(item.timestamp, format: Date.FormatStyle(date: .numeric, time: .standard))")
-                    } label: {
-                        Text(item.timestamp, format: Date.FormatStyle(date: .numeric, time: .standard))
-                    }
+        VStack() {
+            Text("Text")
+                .accessibilityIdentifier("mainText")
+            Spacer()
+                
+            VStack() {
+                ControlGroup {
+                    Button(/*@START_MENU_TOKEN@*/"Button"/*@END_MENU_TOKEN@*/, action: button1)
+                        .accessibilityIdentifier("button1")
+                    Button("Button 2", action: button2)
+                        .accessibilityIdentifier("button2")
                 }
-                .onDelete(perform: deleteItems)
-            }
-            .toolbar {
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    EditButton()
+                ControlGroup {
+                    Button("Button 3", action: button3)
+                        .accessibilityIdentifier("button3")
+                    Button("Button 4", action: button4)
+                        .accessibilityIdentifier("button4")
                 }
-                ToolbarItem {
-                    Button(action: addItem) {
-                        Label("Add Item", systemImage: "plus")
-                    }
-                }
-            }
-        } detail: {
-            Text("Select an item")
-        }
-    }
-
-    private func addItem() {
-        withAnimation {
-            let newItem = Item(timestamp: Date())
-            modelContext.insert(newItem)
-        }
-    }
-
-    private func deleteItems(offsets: IndexSet) {
-        withAnimation {
-            for index in offsets {
-                modelContext.delete(items[index])
             }
         }
     }
+    
+    func button1() {NSLog("1")}
+    func button2() {NSLog("2")}
+    func button3() {NSLog("3")}
+    func button4() {NSLog("4")}
 }
 
 #Preview {
