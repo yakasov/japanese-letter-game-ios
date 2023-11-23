@@ -5,40 +5,89 @@
 //  Created by Angel on 30/08/2023.
 //
 
-import SwiftUI
 import SwiftData
+import SwiftUI
+
+struct LetterButtonStyle: ButtonStyle {
+    func makeBody(configuration: Configuration) -> some View {
+        configuration.label
+            .padding(EdgeInsets(top: 16, leading: 32, bottom: 16, trailing: 32))
+            .frame(maxWidth: 175, maxHeight: 150)
+            .background(.purple)
+            .cornerRadius(10)
+    }
+}
+
+struct ToolbarButtonStyle: ButtonStyle {
+    func makeBody(configuration: Configuration) -> some View {
+        configuration.label
+            .padding(EdgeInsets(top: 20, leading: 20, bottom: 20, trailing: 20))
+            .frame(maxWidth: .infinity)
+            .background(.black)
+            .font(.system(size: 14))
+    }
+}
 
 struct ContentView: View {
     @Environment(\.modelContext) private var modelContext
     @Query private var items: [Item]
 
     var body: some View {
-        VStack() {
-            Text("Text")
-                .accessibilityIdentifier("mainText")
-            Spacer()
-                
-            VStack() {
-                ControlGroup {
-                    Button(/*@START_MENU_TOKEN@*/"Button"/*@END_MENU_TOKEN@*/, action: button1)
-                        .accessibilityIdentifier("button1")
-                    Button("Button 2", action: button2)
-                        .accessibilityIdentifier("button2")
+        NavigationStack {
+            VStack(alignment: .center, spacing: 0.0) {
+                Text("ありがとう")
+                    .accessibilityIdentifier("mainText")
+                    .foregroundColor(.black)
+                    .font(.system(size: 48))
+                Spacer()
+                    .frame(height: 0)
+                VStack(alignment: .center) {
+                    HStack(alignment: .center) {
+                        Button("Button") {
+                            NSLog("1")
+                        }
+                        Spacer()
+                            .frame(width: 10)
+                        Button("Button 2") {
+                            NSLog("2")
+                        }
+                    }
+                    HStack(alignment: .center) {
+                        Button("Button 3") {
+                            NSLog("3")
+                        }
+                        Spacer()
+                            .frame(width: 10)
+                        Button("Button 4") {
+                            NSLog("4")
+                        }
+                    }
                 }
-                ControlGroup {
-                    Button("Button 3", action: button3)
-                        .accessibilityIdentifier("button3")
-                    Button("Button 4", action: button4)
-                        .accessibilityIdentifier("button4")
+                .buttonStyle(LetterButtonStyle())
+                .offset(y: 150)
+            }
+            .frame(maxWidth: .infinity, maxHeight: .infinity)
+            .background(.white)
+            .toolbar {
+                ToolbarItemGroup(placement: .bottomBar) {
+                    Spacer()
+                    Button("Matching") {}
+                    Spacer()
+                    Button("Tracing") {}
+                    Spacer()
+                    Button("Pairing") {}
+                    Spacer()
+                    HStack {
+                        Divider()
+                            .frame(width: 1)
+                            .background(.black)
+                        Button("Settings") {}
+                    }
+                    Spacer()
                 }
             }
         }
     }
-    
-    func button1() {NSLog("1")}
-    func button2() {NSLog("2")}
-    func button3() {NSLog("3")}
-    func button4() {NSLog("4")}
 }
 
 #Preview {
