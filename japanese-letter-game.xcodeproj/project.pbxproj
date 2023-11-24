@@ -7,9 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0BD378202A9F895C008849D5 /* japanese_letter_gameApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BD3781F2A9F895C008849D5 /* japanese_letter_gameApp.swift */; };
-		0BD378222A9F895C008849D5 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BD378212A9F895C008849D5 /* ContentView.swift */; };
-		0BD378242A9F895C008849D5 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BD378232A9F895C008849D5 /* Item.swift */; };
+		0B5815022B10EF4600E927BF /* ButtonStyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B5815012B10EF4600E927BF /* ButtonStyles.swift */; };
+		0B5815042B10F19400E927BF /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B5815032B10F19400E927BF /* SettingsView.swift */; };
+		0B5815062B10F4B000E927BF /* JSONHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B5815052B10F4B000E927BF /* JSONHandler.swift */; };
+		0B58150F2B10FA9200E927BF /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0B58150E2B10FA9200E927BF /* Launch Screen.storyboard */; };
+		0B5815112B10FC0500E927BF /* TracingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B5815102B10FC0500E927BF /* TracingView.swift */; };
+		0B5815132B10FC2900E927BF /* PairingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B5815122B10FC2900E927BF /* PairingView.swift */; };
+		0BD378202A9F895C008849D5 /* MainApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BD3781F2A9F895C008849D5 /* MainApp.swift */; };
+		0BD378222A9F895C008849D5 /* MatchingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BD378212A9F895C008849D5 /* MatchingView.swift */; };
 		0BD378262A9F895E008849D5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0BD378252A9F895E008849D5 /* Assets.xcassets */; };
 		0BD378292A9F895E008849D5 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0BD378282A9F895E008849D5 /* Preview Assets.xcassets */; };
 		0BD378332A9F895E008849D5 /* japanese_letter_gameTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BD378322A9F895E008849D5 /* japanese_letter_gameTests.swift */; };
@@ -37,10 +42,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0B5815012B10EF4600E927BF /* ButtonStyles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonStyles.swift; sourceTree = "<group>"; };
+		0B5815032B10F19400E927BF /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		0B5815052B10F4B000E927BF /* JSONHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONHandler.swift; sourceTree = "<group>"; };
+		0B5815092B10F81600E927BF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		0B58150E2B10FA9200E927BF /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
+		0B5815102B10FC0500E927BF /* TracingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TracingView.swift; sourceTree = "<group>"; };
+		0B5815122B10FC2900E927BF /* PairingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PairingView.swift; sourceTree = "<group>"; };
 		0BD3781C2A9F895C008849D5 /* japanese-letter-game.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "japanese-letter-game.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		0BD3781F2A9F895C008849D5 /* japanese_letter_gameApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = japanese_letter_gameApp.swift; sourceTree = "<group>"; };
-		0BD378212A9F895C008849D5 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		0BD378232A9F895C008849D5 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
+		0BD3781F2A9F895C008849D5 /* MainApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainApp.swift; sourceTree = "<group>"; };
+		0BD378212A9F895C008849D5 /* MatchingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchingView.swift; sourceTree = "<group>"; };
 		0BD378252A9F895E008849D5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0BD378282A9F895E008849D5 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		0BD3782E2A9F895E008849D5 /* japanese-letter-gameTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "japanese-letter-gameTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -79,6 +90,7 @@
 		0BD378132A9F895C008849D5 = {
 			isa = PBXGroup;
 			children = (
+				0B58150E2B10FA9200E927BF /* Launch Screen.storyboard */,
 				0BD3781E2A9F895C008849D5 /* japanese-letter-game */,
 				0BD378312A9F895E008849D5 /* japanese-letter-gameTests */,
 				0BD3783B2A9F895E008849D5 /* japanese-letter-gameUITests */,
@@ -99,12 +111,16 @@
 		0BD3781E2A9F895C008849D5 /* japanese-letter-game */ = {
 			isa = PBXGroup;
 			children = (
-				0BD3781F2A9F895C008849D5 /* japanese_letter_gameApp.swift */,
-				0BD378212A9F895C008849D5 /* ContentView.swift */,
-				0BD378232A9F895C008849D5 /* Item.swift */,
+				0BD3781F2A9F895C008849D5 /* MainApp.swift */,
+				0BD378212A9F895C008849D5 /* MatchingView.swift */,
 				0BD378252A9F895E008849D5 /* Assets.xcassets */,
 				0BD3784B2A9F8F24008849D5 /* characters.json */,
 				0BD378272A9F895E008849D5 /* Preview Content */,
+				0B5815012B10EF4600E927BF /* ButtonStyles.swift */,
+				0B5815032B10F19400E927BF /* SettingsView.swift */,
+				0B5815052B10F4B000E927BF /* JSONHandler.swift */,
+				0B5815102B10FC0500E927BF /* TracingView.swift */,
+				0B5815122B10FC2900E927BF /* PairingView.swift */,
 			);
 			path = "japanese-letter-game";
 			sourceTree = "<group>";
@@ -128,6 +144,7 @@
 		0BD3783B2A9F895E008849D5 /* japanese-letter-gameUITests */ = {
 			isa = PBXGroup;
 			children = (
+				0B5815092B10F81600E927BF /* Info.plist */,
 				0BD3783C2A9F895E008849D5 /* japanese_letter_gameUITests.swift */,
 				0BD3783E2A9F895E008849D5 /* japanese_letter_gameUITestsLaunchTests.swift */,
 			);
@@ -240,6 +257,7 @@
 			files = (
 				0BD3784C2A9F8F24008849D5 /* characters.json in Resources */,
 				0BD378292A9F895E008849D5 /* Preview Assets.xcassets in Resources */,
+				0B58150F2B10FA9200E927BF /* Launch Screen.storyboard in Resources */,
 				0BD378262A9F895E008849D5 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -266,9 +284,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0BD378222A9F895C008849D5 /* ContentView.swift in Sources */,
-				0BD378242A9F895C008849D5 /* Item.swift in Sources */,
-				0BD378202A9F895C008849D5 /* japanese_letter_gameApp.swift in Sources */,
+				0B5815042B10F19400E927BF /* SettingsView.swift in Sources */,
+				0B5815132B10FC2900E927BF /* PairingView.swift in Sources */,
+				0B5815062B10F4B000E927BF /* JSONHandler.swift in Sources */,
+				0BD378222A9F895C008849D5 /* MatchingView.swift in Sources */,
+				0B5815022B10EF4600E927BF /* ButtonStyles.swift in Sources */,
+				0BD378202A9F895C008849D5 /* MainApp.swift in Sources */,
+				0B5815112B10FC0500E927BF /* TracingView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -526,10 +548,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = D5LRB6WQJ2;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "japanese-letter-gameUITests/Info.plist";
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "yakasov.japanese-letter-gameUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -544,10 +568,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = D5LRB6WQJ2;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "japanese-letter-gameUITests/Info.plist";
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "yakasov.japanese-letter-gameUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
