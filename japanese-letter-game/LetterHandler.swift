@@ -1,6 +1,7 @@
 import Foundation
 
 var JSONCharacters: [String: Any] = readJSONFile()
+var allowedCharacters: [String: Any] = getAllowedCharacters()
 
 func readJSONFile() -> [String: Any] {
     do {
@@ -17,4 +18,16 @@ func readJSONFile() -> [String: Any] {
         return [:]
     }
     return [:]
+}
+
+func getAllowedCharacters() -> [String: Any] {
+    return [:]
+}
+
+func getCharacterPair() -> (String, String) {
+    return ("","")
+}
+
+func getRandomCharacter() -> String {
+    return ""
 }
