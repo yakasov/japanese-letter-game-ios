@@ -1,11 +1,12 @@
 import Foundation
 
-var JSONCharacters: [String: Any] = readJSONFile()
+var JSONCharacters: [String: Any] = readJSONFile(path: "characters")
+var characterOrder: [String: Any] = readJSONFile(path: "characters_order")
 var allowedCharacters: [String: Any] = getAllowedCharacters()
 
-func readJSONFile() -> [String: Any] {
+func readJSONFile(path: String) -> [String: Any] {
     do {
-        if let bundlePath = Bundle.main.path(forResource: "characters", ofType: "json"),
+        if let bundlePath = Bundle.main.path(forResource: path, ofType: "json"),
             let jsonData = try String(contentsOfFile: bundlePath).data(using: .utf8)
         {
             if let json = try JSONSerialization.jsonObject(with: jsonData, options: .mutableLeaves)
