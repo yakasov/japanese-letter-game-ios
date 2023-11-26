@@ -1,10 +1,10 @@
 import Foundation
 
-var JSONCharacters: [String: Any] = readJSONFile(path: "characters")
-var characterOrder: [String: Any] = readJSONFile(path: "characters_order")
-var allowedCharacters: [String: Any] = getAllowedCharacters()
+public var JSONCharacters: [String: Any] = readJSONFile(path: "characters")
+public var characterOrder: [String: Any] = readJSONFile(path: "characters_order")
+public var allowedCharacters: [String: Any] = getAllowedCharacters()
 
-func readJSONFile(path: String) -> [String: Any] {
+private func readJSONFile(path: String) -> [String: Any] {
     do {
         if let bundlePath = Bundle.main.path(forResource: path, ofType: "json"),
             let jsonData = try String(contentsOfFile: bundlePath).data(using: .utf8)
@@ -21,14 +21,14 @@ func readJSONFile(path: String) -> [String: Any] {
     return [:]
 }
 
-func getAllowedCharacters() -> [String: Any] {
+public func getAllowedCharacters() -> [String: Any] {
     return [:]
 }
 
-func getCharacterPair() -> (String, String) {
+public func getCharacterPair() -> (String, String) {
     return ("","")
 }
 
-func getRandomCharacter() -> String {
+public func getRandomCharacter() -> String {
     return ""
 }

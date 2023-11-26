@@ -44,7 +44,7 @@ class CharacterRowToggles: ObservableObject {
 struct SettingsView: View {
 
     @ObservedObject private var characterRowToggles: CharacterRowToggles = CharacterRowToggles()
-    @State private var isToggleSectionExpanded: Bool = true
+    @State private var isToggleSectionExpanded: Bool = false
     @State private var exampleToggleBool: Bool = true
 
     public var body: some View {
@@ -55,15 +55,15 @@ struct SettingsView: View {
                         ForEach($characterRowToggles.characterRows) { $c in
                             Toggle(c.id, isOn: $c.enabled)
                         }
-                        Button("Debug: Log chosen rows") {
-                            NSLog(characterRowToggles.characterRows.description)
-                        }
-                        Button("Debug: Delete saved rows") {
-                            UserDefaults.standard.removeObject(forKey: "ChosenRows")
-                            NSLog("Deleted ChosenRows from UserDefaults")
-                        }
                     } label: {
                         Text("Show row choices")
+                    }
+                    Button("Debug: Log chosen rows") {
+                        NSLog(characterRowToggles.characterRows.description)
+                    }
+                    Button("Debug: Delete saved rows") {
+                        UserDefaults.standard.removeObject(forKey: "ChosenRows")
+                        NSLog("Deleted ChosenRows from UserDefaults")
                     }
 
                     Section("More Settings") {
