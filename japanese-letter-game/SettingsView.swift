@@ -7,13 +7,13 @@ struct CharacterRow: Identifiable, Codable, Equatable {
 }
 
 class CharacterRowToggles: ObservableObject {
-    @Published var characterRows: [CharacterRow] = [] {
+    @Published public var characterRows: [CharacterRow] = [] {
         didSet {
             saveCharacterRows(encodable: characterRows)
         }
     }
 
-    init() {
+    public init() {
         let unsortedRows: [CharacterRow] = loadCharacterRows()
         self.characterRows = unsortedRows.sorted(by: { $0.position < $1.position })
     }
@@ -43,11 +43,11 @@ class CharacterRowToggles: ObservableObject {
 
 struct SettingsView: View {
 
-    @ObservedObject var characterRowToggles: CharacterRowToggles = CharacterRowToggles()
-    @State var firstToggle: Bool = true
+    @ObservedObject private var characterRowToggles: CharacterRowToggles = CharacterRowToggles()
     @State private var isToggleSectionExpanded: Bool = true
+    @State private var exampleToggleBool: Bool = true
 
-    var body: some View {
+    public var body: some View {
         NavigationView {
             VStack {
                 List {
@@ -63,11 +63,12 @@ struct SettingsView: View {
                             NSLog("Deleted ChosenRows from UserDefaults")
                         }
                     } label: {
-                        Text("Toggle Rows")
+                        Text("Show row choices")
                     }
 
                     Section("More Settings") {
                         Text("Bosh")
+                        Toggle("Label", isOn: $exampleToggleBool)
                     }
                 }
             }

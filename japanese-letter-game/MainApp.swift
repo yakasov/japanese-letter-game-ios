@@ -4,8 +4,8 @@ import SwiftUI
 @main
 struct MainApp: App {
 
-    @State var currentView: String = "MatchingView"
-    var body: some Scene {
+    @State private var currentView: String = "MatchingView"
+    public var body: some Scene {
         WindowGroup {
             NavigationStack {
                 VStack {

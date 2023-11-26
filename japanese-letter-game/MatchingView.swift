@@ -3,8 +3,8 @@ import SwiftUI
 
 struct MatchingView: View {
     
-    @State var currentCharacter: String = "ありがとう"
-    var body: some View {
+    @State private var currentCharacter: String = "ありがとう"
+    public var body: some View {
         VStack(alignment: .center, spacing: 0.0) {
             Text(currentCharacter)
                 .accessibilityIdentifier("mainText")
