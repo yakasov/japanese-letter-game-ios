@@ -24,7 +24,7 @@ class CharacterRowToggles: ObservableObject {
         }
     }
 
-    private func loadCharacterRows() -> [CharacterRow] {
+    public func loadCharacterRows() -> [CharacterRow] {
         @State var loadedRows: [CharacterRow]
 
         if let data = UserDefaults.standard.object(forKey: "ChosenRows") as? Data {
@@ -64,6 +64,15 @@ struct SettingsView: View {
                     Button("Debug: Delete saved rows") {
                         UserDefaults.standard.removeObject(forKey: "ChosenRows")
                         NSLog("Deleted ChosenRows from UserDefaults")
+                    }
+                    Button("Debug: Log JSONCharacters") {
+                        NSLog("\(JSONCharacters)")
+                    }
+                    Button("Debug: Log AllowedCharacters") {
+                        NSLog("\(getAllowedCharacters())")
+                    }
+                    Button("Debug: Log FlattenedCharacters") {
+                        NSLog("\(getFlattenedCharacters())")
                     }
 
                     Section("More Settings") {

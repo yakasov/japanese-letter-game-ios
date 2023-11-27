@@ -8,6 +8,7 @@ struct LetterButtonStyle: ButtonStyle {
             .frame(maxWidth: 175, maxHeight: 150)
             .background(.purple)
             .cornerRadius(10)
+            .font(.system(size: 32))
     }
 }
 

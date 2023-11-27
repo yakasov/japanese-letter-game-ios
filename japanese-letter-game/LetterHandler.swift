@@ -2,7 +2,7 @@ import Foundation
 
 public var JSONCharacters: [String: Any] = readJSONFile(path: "characters")
 public var characterOrder: [String: Any] = readJSONFile(path: "characters_order")
-public var allowedCharacters: [String: Any] = getAllowedCharacters()
+private var currentRandomCharacters: [String] = []
 
 private func readJSONFile(path: String) -> [String: Any] {
     do {
@@ -22,13 +22,50 @@ private func readJSONFile(path: String) -> [String: Any] {
 }
 
 public func getAllowedCharacters() -> [String: Any] {
-    return [:]
+    /// Returns a dictionary of { "row": [ {"English": "Hiragana", ...} ] }.
+    let characterRowToggles: CharacterRowToggles = CharacterRowToggles()
+    let enabledRows = characterRowToggles.loadCharacterRows().filter({ $0.enabled })
+    return JSONCharacters.filter({ key, _ in
+        enabledRows.contains { $0.id == key }
+    })
 }
 
-public func getCharacterPair() -> (String, String) {
-    return ("","")
+public func getFlattenedCharacters() -> [String: Any] {
+    /// Flattens the result of getAllowedCharacters() into
+    /// an array of [ "English": "Hiragana", ... ] for easy picking.
+    return Dictionary(
+        getAllowedCharacters().values
+            .compactMap { value -> [[String: Any]]? in
+                let array = value as? [Any]
+                return array?.compactMap { $0 as? [String: Any] }
+            }
+            .joined()
+            .map { dictionary in
+                dictionary.map { ($0.key, $0.value) }
+            }
+            .joined(),
+        uniquingKeysWith: { (_, last) in last }
+    )
 }
 
-public func getRandomCharacter() -> String {
-    return ""
+public func getCharacterPair() -> (String, Any) {
+    return getFlattenedCharacters().randomElement()!
+}
+
+public func getRandomCharacter() -> Any {
+    /// Provides a single character from getFlattenedCharacters().
+    /// This value is then added to a currentRandomCharacters array -
+    /// it will get a different character if it is already in the array to avoid
+    /// duplicate characters.
+    if currentRandomCharacters.count >= 4 {
+        currentRandomCharacters = []
+    }
+    
+    let characterDictionary: [String: Any] = getFlattenedCharacters()
+    var randomCharacter: String = characterDictionary.randomElement()!.value as! String
+    while currentRandomCharacters.contains(randomCharacter) {
+        randomCharacter = characterDictionary.randomElement()!.value as! String
+    }
+    currentRandomCharacters.append(randomCharacter)
+    return randomCharacter
 }
