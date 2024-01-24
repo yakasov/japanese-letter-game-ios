@@ -13,10 +13,10 @@ class ButtonStrings: ObservableObject {
     }
 
     public func randomiseButtons() {
-        button1String = getRandomCharacter() as! String
-        button2String = getRandomCharacter() as! String
-        button3String = getRandomCharacter() as! String
-        button4String = getRandomCharacter() as! String
+        button1String = getRandomCharacter()
+        button2String = getRandomCharacter()
+        button3String = getRandomCharacter()
+        button4String = getRandomCharacter()
 
         randomiseCorrectButton()
     }
@@ -36,8 +36,7 @@ class ButtonStrings: ObservableObject {
 }
 
 struct MatchingView: View {
-
-    @State public var lowerTextString: String = "..."
+    @State public var lowerTextString: String = " "
     @ObservedObject public var buttonStrings = ButtonStrings()
 
     public var body: some View {

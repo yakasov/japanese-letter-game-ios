@@ -1,34 +1,73 @@
 import SwiftUI
 import UIKit
 
-struct TracingView: View {
-    @State private var isDragging = false
-    private var renderer = UIGraphicsImageRenderer(
-        size: CGSize(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height / 1.5))
-    private var image: UIImage = UIImage()
+class TimerObject: ObservableObject {
+    @Published var timePassed: Double = 0.0
+    @Published var characterPair: (String, String) = ("", "")
+    @Published var screenTouched: Bool = false
+    var timer: DispatchSourceTimer?
 
     init() {
-        image = renderer.image { (context) in
-            UIColor.darkGray.setStroke()
-            context.stroke(renderer.format.bounds)
-            UIColor(red: 158 / 255, green: 215 / 255, blue: 245 / 255, alpha: 1).setFill()
-            context.fill(CGRect(x: 1, y: 1, width: 140, height: 140))
-        }
+        setupTimer()
     }
+    
+    func updateScreenTouched(newVal: Bool) {
+        self.screenTouched = newVal
+    }
+
+    func setCharacters() {
+        self.characterPair = getCharacterPair() as! (String, String)
+    }
+
+    func setupTimer() {
+        self.timer = DispatchSource.makeTimerSource()
+        self.timer?.schedule(deadline: .now(), repeating: .milliseconds(100))
+        self.timer?.setEventHandler { [weak self] in
+            DispatchQueue.main.async {
+                guard let self = self else { return }
+                if self.screenTouched {
+                    if self.timePassed > 3.0 {
+                        self.screenTouched = false
+                        self.setCharacters()
+                    }
+                    self.timePassed += 0.1
+                } else {
+                    self.timePassed = 0
+                }
+            }
+        }
+        self.timer?.resume()
+    }
+}
+
+struct TracingView: View {
+    @ObservedObject var timer = TimerObject()
 
     var drag: some Gesture {
         DragGesture()
-            .onChanged { _ in self.isDragging = true }
-            .onEnded { _ in self.isDragging = false }
+            .onChanged { _ in timer.updateScreenTouched(newVal: false) }
+            .onEnded { _ in timer.updateScreenTouched(newVal: true) }
     }
-
+    
+    init() {
+        timer.setCharacters()
+    }
+    
     public var body: some View {
-        VStack {
+        VStack(spacing: 0.0) {
             ZStack {
-                Image(uiImage: image)
+                Text(timer.characterPair.1)
+                    .accessibilityIdentifier("mainText")
+                    .foregroundColor(.gray)
+                    .font(.system(size: 216))
                 CanvasWrapper()
             }
-
+            .gesture(drag)
+            Spacer()
+            Text(timer.characterPair.0)
+                .offset(y: -100)
+                .foregroundColor(.gray)
+                .font(.system(size: 32))
         }
     }
 }

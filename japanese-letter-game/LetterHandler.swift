@@ -52,7 +52,7 @@ public func getCharacterPair() -> (String, Any) {
     return getFlattenedCharacters().randomElement()!
 }
 
-public func getRandomCharacter() -> Any {
+public func getRandomCharacter() -> String {
     /// Provides a single character from getFlattenedCharacters().
     /// This value is then added to a currentRandomCharacters array -
     /// it will get a different character if it is already in the array to avoid
