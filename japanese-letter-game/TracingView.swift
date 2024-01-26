@@ -4,15 +4,14 @@ import UIKit
 class TimerObject: ObservableObject {
     @Published var timePassed: Double = 0.0
     @Published var characterPair: (String, String) = ("", "")
-    @Published var screenTouched: Bool = false
+    @Published var screenTouched: Bool = true
     var timer: DispatchSourceTimer?
-
-    init() {
-        setupTimer()
-    }
+    var canvas: Canvas
     
-    func updateScreenTouched(newVal: Bool) {
-        self.screenTouched = newVal
+
+    init(canvas: Canvas) {
+        self.canvas = canvas;
+        setupTimer()
     }
 
     func setCharacters() {
@@ -25,10 +24,11 @@ class TimerObject: ObservableObject {
         self.timer?.setEventHandler { [weak self] in
             DispatchQueue.main.async {
                 guard let self = self else { return }
-                if self.screenTouched {
+                if !self.screenTouched {
                     if self.timePassed > 3.0 {
-                        self.screenTouched = false
+                        self.screenTouched = true
                         self.setCharacters()
+                        self.canvas.resetPaths()
                     }
                     self.timePassed += 0.1
                 } else {
@@ -41,30 +41,30 @@ class TimerObject: ObservableObject {
 }
 
 struct TracingView: View {
-    @ObservedObject var timer = TimerObject()
-
-    var drag: some Gesture {
-        DragGesture()
-            .onChanged { _ in timer.updateScreenTouched(newVal: false) }
-            .onEnded { _ in timer.updateScreenTouched(newVal: true) }
-    }
+    @ObservedObject var timer: TimerObject
+    @State var canvas = Canvas()
     
     init() {
-        timer.setCharacters()
+        let canvas = Canvas()
+        self.timer = TimerObject(canvas: canvas)
+        self.timer.setCharacters()
+        canvas.onTouchesBegan = { [self] in timer.screenTouched = true }
+        canvas.onTouchesEnded = { [self] in timer.screenTouched = false }
+        _canvas = State<Canvas>(initialValue: canvas)
+
     }
     
     public var body: some View {
         VStack(spacing: 0.0) {
             ZStack {
-                Text(timer.characterPair.1)
+                Text(self.timer.characterPair.1)
                     .accessibilityIdentifier("mainText")
                     .foregroundColor(.gray)
                     .font(.system(size: 216))
-                CanvasWrapper()
+                CanvasWrapper(canvas: $canvas)
             }
-            .gesture(drag)
             Spacer()
-            Text(timer.characterPair.0)
+            Text(self.timer.characterPair.0)
                 .offset(y: -100)
                 .foregroundColor(.gray)
                 .font(.system(size: 32))
