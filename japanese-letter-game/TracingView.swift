@@ -26,6 +26,9 @@ class TimerObject: ObservableObject {
                 guard let self = self else { return }
                 if !self.screenTouched {
                     if self.timePassed > 3.0 {
+                        NSLog("Passed 3.0 seconds")
+                        runVisionRecognition(canvas: self.canvas)
+                        NSLog("Post runVisionRecognition")
                         self.screenTouched = true
                         self.setCharacters()
                         self.canvas.resetPaths()
@@ -45,6 +48,7 @@ struct TracingView: View {
     @State var canvas = Canvas()
     
     init() {
+        NSLog("Tracing init")
         let canvas = Canvas()
         self.timer = TimerObject(canvas: canvas)
         self.timer.setCharacters()
