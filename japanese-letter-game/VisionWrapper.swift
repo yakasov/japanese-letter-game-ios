@@ -1,12 +1,12 @@
 import UIKit
 import Vision
 
-func convertCanvasToImage(view: UIView) -> UIImage {
-    let renderer = UIGraphicsImageRenderer(size: view.bounds.size)
-    return renderer.image { ctx in
-        view.drawHierarchy(in: view.bounds, afterScreenUpdates: true)
-    }
-}
+//func convertCanvasToImage(view: UIView) -> UIImage {
+//    let renderer = UIGraphicsImageRenderer(size: view.bounds.size)
+//    return renderer.image { ctx in
+//        view.drawHierarchy(in: view.bounds, afterScreenUpdates: true)
+//    }
+//}
 
 func runVisionRecognition(canvas: Canvas) {
 

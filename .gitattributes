@@ -1,0 +1,2 @@
+Pods/MLKitTextRecognitionCommon filter=lfs diff=lfs merge=lfs -text
+Pods/MLKitTextRecognitionCommon/Frameworks/MLKitTextRecognitionCommon.framework/MLKitTextRecognitionCommon filter=lfs diff=lfs merge=lfs -text

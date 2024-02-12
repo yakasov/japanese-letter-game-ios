@@ -27,8 +27,8 @@ class TimerObject: ObservableObject {
                 if !self.screenTouched {
                     if self.timePassed > 3.0 {
                         NSLog("Passed 3.0 seconds")
-                        runVisionRecognition(canvas: self.canvas)
-                        NSLog("Post runVisionRecognition")
+                        runMLKitRecognition(canvas: self.canvas)
+                        NSLog("Post runMLKitRecognition")
                         self.screenTouched = true
                         self.setCharacters()
                         self.canvas.resetPaths()

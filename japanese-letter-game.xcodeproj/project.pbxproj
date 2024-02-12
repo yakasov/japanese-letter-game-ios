@@ -17,6 +17,7 @@
 		0B5CD6EA2B6022410049C182 /* CanvasWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B5CD6E92B6022410049C182 /* CanvasWrapper.swift */; };
 		0BA9DFFA2B6FCBAF00158195 /* VisionWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BA9DFF92B6FCBAF00158195 /* VisionWrapper.swift */; };
 		0BA9DFFC2B7505E800158195 /* ImageViewWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BA9DFFB2B7505E800158195 /* ImageViewWrapper.swift */; };
+		0BA9E0002B7A8C4400158195 /* MLKitWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BA9DFFF2B7A8C4400158195 /* MLKitWrapper.swift */; };
 		0BD378202A9F895C008849D5 /* MainApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BD3781F2A9F895C008849D5 /* MainApp.swift */; };
 		0BD378222A9F895C008849D5 /* MatchingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BD378212A9F895C008849D5 /* MatchingView.swift */; };
 		0BD378262A9F895E008849D5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0BD378252A9F895E008849D5 /* Assets.xcassets */; };
@@ -26,6 +27,9 @@
 		0BD3783F2A9F895E008849D5 /* japanese_letter_gameUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BD3783E2A9F895E008849D5 /* japanese_letter_gameUITestsLaunchTests.swift */; };
 		0BD3784C2A9F8F24008849D5 /* characters.json in Resources */ = {isa = PBXBuildFile; fileRef = 0BD3784B2A9F8F24008849D5 /* characters.json */; };
 		0BD3784D2A9F8F24008849D5 /* characters.json in Resources */ = {isa = PBXBuildFile; fileRef = 0BD3784B2A9F8F24008849D5 /* characters.json */; };
+		1EFDB4983BC293E2F85BAD6F /* Pods_japanese_letter_gameTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41817BA4F04D557AE19A8AF5 /* Pods_japanese_letter_gameTests.framework */; };
+		AF5C8DAD4E2CD3790BC97DD9 /* Pods_japanese_letter_game_japanese_letter_gameUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7359EC3F6287CF9A093EE25 /* Pods_japanese_letter_game_japanese_letter_gameUITests.framework */; };
+		B5FFFF1876BE315035458041 /* Pods_japanese_letter_game.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CD25C0DCED71C7B68440075 /* Pods_japanese_letter_game.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +50,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		02BD14B904414A343F56067E /* Pods-japanese-letter-game.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-japanese-letter-game.debug.xcconfig"; path = "Target Support Files/Pods-japanese-letter-game/Pods-japanese-letter-game.debug.xcconfig"; sourceTree = "<group>"; };
 		0B50190A2B139A84004D0730 /* characters_order.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = characters_order.json; sourceTree = "<group>"; };
 		0B5815012B10EF4600E927BF /* Styles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Styles.swift; sourceTree = "<group>"; };
 		0B5815032B10F19400E927BF /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
@@ -57,6 +62,7 @@
 		0B5CD6E92B6022410049C182 /* CanvasWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanvasWrapper.swift; sourceTree = "<group>"; };
 		0BA9DFF92B6FCBAF00158195 /* VisionWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisionWrapper.swift; sourceTree = "<group>"; };
 		0BA9DFFB2B7505E800158195 /* ImageViewWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewWrapper.swift; sourceTree = "<group>"; };
+		0BA9DFFF2B7A8C4400158195 /* MLKitWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MLKitWrapper.swift; sourceTree = "<group>"; };
 		0BD3781C2A9F895C008849D5 /* japanese-letter-game.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "japanese-letter-game.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0BD3781F2A9F895C008849D5 /* MainApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainApp.swift; sourceTree = "<group>"; };
 		0BD378212A9F895C008849D5 /* MatchingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchingView.swift; sourceTree = "<group>"; };
@@ -68,6 +74,14 @@
 		0BD3783C2A9F895E008849D5 /* japanese_letter_gameUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = japanese_letter_gameUITests.swift; sourceTree = "<group>"; };
 		0BD3783E2A9F895E008849D5 /* japanese_letter_gameUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = japanese_letter_gameUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		0BD3784B2A9F8F24008849D5 /* characters.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = characters.json; sourceTree = "<group>"; };
+		41817BA4F04D557AE19A8AF5 /* Pods_japanese_letter_gameTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_japanese_letter_gameTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5B3FFD4DC9E2546B0A1FDEBB /* Pods-japanese-letter-game-japanese-letter-gameUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-japanese-letter-game-japanese-letter-gameUITests.debug.xcconfig"; path = "Target Support Files/Pods-japanese-letter-game-japanese-letter-gameUITests/Pods-japanese-letter-game-japanese-letter-gameUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		6CD25C0DCED71C7B68440075 /* Pods_japanese_letter_game.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_japanese_letter_game.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		91AA236295AE5C0E9FC0B193 /* Pods-japanese-letter-game-japanese-letter-gameUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-japanese-letter-game-japanese-letter-gameUITests.release.xcconfig"; path = "Target Support Files/Pods-japanese-letter-game-japanese-letter-gameUITests/Pods-japanese-letter-game-japanese-letter-gameUITests.release.xcconfig"; sourceTree = "<group>"; };
+		95F6C046AB4E7A98122C1BFB /* Pods-japanese-letter-gameTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-japanese-letter-gameTests.release.xcconfig"; path = "Target Support Files/Pods-japanese-letter-gameTests/Pods-japanese-letter-gameTests.release.xcconfig"; sourceTree = "<group>"; };
+		A7359EC3F6287CF9A093EE25 /* Pods_japanese_letter_game_japanese_letter_gameUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_japanese_letter_game_japanese_letter_gameUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B15026904DA493089071384E /* Pods-japanese-letter-gameTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-japanese-letter-gameTests.debug.xcconfig"; path = "Target Support Files/Pods-japanese-letter-gameTests/Pods-japanese-letter-gameTests.debug.xcconfig"; sourceTree = "<group>"; };
+		FAF2E424F6982589D8D9FDFA /* Pods-japanese-letter-game.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-japanese-letter-game.release.xcconfig"; path = "Target Support Files/Pods-japanese-letter-game/Pods-japanese-letter-game.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +89,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B5FFFF1876BE315035458041 /* Pods_japanese_letter_game.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -82,6 +97,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1EFDB4983BC293E2F85BAD6F /* Pods_japanese_letter_gameTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -89,6 +105,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AF5C8DAD4E2CD3790BC97DD9 /* Pods_japanese_letter_game_japanese_letter_gameUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -103,6 +120,8 @@
 				0BD378312A9F895E008849D5 /* japanese-letter-gameTests */,
 				0BD3783B2A9F895E008849D5 /* japanese-letter-gameUITests */,
 				0BD3781D2A9F895C008849D5 /* Products */,
+				E41BDE4036BCE09CE5403663 /* Pods */,
+				64A66E28A5A634D3B00FD767 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -133,6 +152,7 @@
 				0B5815102B10FC0500E927BF /* TracingView.swift */,
 				0B5CD6E92B6022410049C182 /* CanvasWrapper.swift */,
 				0BA9DFFB2B7505E800158195 /* ImageViewWrapper.swift */,
+				0BA9DFFF2B7A8C4400158195 /* MLKitWrapper.swift */,
 			);
 			path = "japanese-letter-game";
 			sourceTree = "<group>";
@@ -163,6 +183,29 @@
 			path = "japanese-letter-gameUITests";
 			sourceTree = "<group>";
 		};
+		64A66E28A5A634D3B00FD767 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6CD25C0DCED71C7B68440075 /* Pods_japanese_letter_game.framework */,
+				A7359EC3F6287CF9A093EE25 /* Pods_japanese_letter_game_japanese_letter_gameUITests.framework */,
+				41817BA4F04D557AE19A8AF5 /* Pods_japanese_letter_gameTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E41BDE4036BCE09CE5403663 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				02BD14B904414A343F56067E /* Pods-japanese-letter-game.debug.xcconfig */,
+				FAF2E424F6982589D8D9FDFA /* Pods-japanese-letter-game.release.xcconfig */,
+				5B3FFD4DC9E2546B0A1FDEBB /* Pods-japanese-letter-game-japanese-letter-gameUITests.debug.xcconfig */,
+				91AA236295AE5C0E9FC0B193 /* Pods-japanese-letter-game-japanese-letter-gameUITests.release.xcconfig */,
+				B15026904DA493089071384E /* Pods-japanese-letter-gameTests.debug.xcconfig */,
+				95F6C046AB4E7A98122C1BFB /* Pods-japanese-letter-gameTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -170,9 +213,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0BD378422A9F895E008849D5 /* Build configuration list for PBXNativeTarget "japanese-letter-game" */;
 			buildPhases = (
+				47038175F5AF24FE64928E33 /* [CP] Check Pods Manifest.lock */,
 				0BD378182A9F895C008849D5 /* Sources */,
 				0BD378192A9F895C008849D5 /* Frameworks */,
 				0BD3781A2A9F895C008849D5 /* Resources */,
+				592725F1E7599003A1CDDD66 /* [CP] Embed Pods Frameworks */,
+				FDE4C98BFB38EF04A29FA82C /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -187,6 +233,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0BD378452A9F895E008849D5 /* Build configuration list for PBXNativeTarget "japanese-letter-gameTests" */;
 			buildPhases = (
+				67454675E03511DA68C547A5 /* [CP] Check Pods Manifest.lock */,
 				0BD3782A2A9F895E008849D5 /* Sources */,
 				0BD3782B2A9F895E008849D5 /* Frameworks */,
 				0BD3782C2A9F895E008849D5 /* Resources */,
@@ -205,9 +252,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0BD378482A9F895E008849D5 /* Build configuration list for PBXNativeTarget "japanese-letter-gameUITests" */;
 			buildPhases = (
+				D9FD4D47EEEC1AFF515BF52B /* [CP] Check Pods Manifest.lock */,
 				0BD378342A9F895E008849D5 /* Sources */,
 				0BD378352A9F895E008849D5 /* Frameworks */,
 				0BD378362A9F895E008849D5 /* Resources */,
+				BE9A4FA6197204FD2C082DB8 /* [CP] Embed Pods Frameworks */,
+				721000CC1BD631F67513A452 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -292,6 +342,143 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		47038175F5AF24FE64928E33 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-japanese-letter-game-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		592725F1E7599003A1CDDD66 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-japanese-letter-game/Pods-japanese-letter-game-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-japanese-letter-game/Pods-japanese-letter-game-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-japanese-letter-game/Pods-japanese-letter-game-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		67454675E03511DA68C547A5 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-japanese-letter-gameTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		721000CC1BD631F67513A452 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-japanese-letter-game-japanese-letter-gameUITests/Pods-japanese-letter-game-japanese-letter-gameUITests-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-japanese-letter-game-japanese-letter-gameUITests/Pods-japanese-letter-game-japanese-letter-gameUITests-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-japanese-letter-game-japanese-letter-gameUITests/Pods-japanese-letter-game-japanese-letter-gameUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BE9A4FA6197204FD2C082DB8 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-japanese-letter-game-japanese-letter-gameUITests/Pods-japanese-letter-game-japanese-letter-gameUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-japanese-letter-game-japanese-letter-gameUITests/Pods-japanese-letter-game-japanese-letter-gameUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-japanese-letter-game-japanese-letter-gameUITests/Pods-japanese-letter-game-japanese-letter-gameUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D9FD4D47EEEC1AFF515BF52B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-japanese-letter-game-japanese-letter-gameUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FDE4C98BFB38EF04A29FA82C /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-japanese-letter-game/Pods-japanese-letter-game-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-japanese-letter-game/Pods-japanese-letter-game-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-japanese-letter-game/Pods-japanese-letter-game-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		0BD378182A9F895C008849D5 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -299,6 +486,7 @@
 			files = (
 				0B5815042B10F19400E927BF /* SettingsView.swift in Sources */,
 				0B5815132B10FC2900E927BF /* PairingView.swift in Sources */,
+				0BA9E0002B7A8C4400158195 /* MLKitWrapper.swift in Sources */,
 				0B5CD6EA2B6022410049C182 /* CanvasWrapper.swift in Sources */,
 				0B5815062B10F4B000E927BF /* LetterHandler.swift in Sources */,
 				0BA9DFFA2B6FCBAF00158195 /* VisionWrapper.swift in Sources */,
@@ -464,6 +652,7 @@
 		};
 		0BD378432A9F895E008849D5 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 02BD14B904414A343F56067E /* Pods-japanese-letter-game.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -472,6 +661,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"japanese-letter-game/Preview Content\"";
 				DEVELOPMENT_TEAM = D5LRB6WQJ2;
 				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "This app needs to save images to your photo library for debugging purposes.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -494,6 +684,7 @@
 		};
 		0BD378442A9F895E008849D5 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FAF2E424F6982589D8D9FDFA /* Pods-japanese-letter-game.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -502,6 +693,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"japanese-letter-game/Preview Content\"";
 				DEVELOPMENT_TEAM = D5LRB6WQJ2;
 				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "This app needs to save images to your photo library for debugging purposes.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -524,6 +716,7 @@
 		};
 		0BD378462A9F895E008849D5 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B15026904DA493089071384E /* Pods-japanese-letter-gameTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -544,6 +737,7 @@
 		};
 		0BD378472A9F895E008849D5 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 95F6C046AB4E7A98122C1BFB /* Pods-japanese-letter-gameTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -564,6 +758,7 @@
 		};
 		0BD378492A9F895E008849D5 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5B3FFD4DC9E2546B0A1FDEBB /* Pods-japanese-letter-game-japanese-letter-gameUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
@@ -584,6 +779,7 @@
 		};
 		0BD3784A2A9F895E008849D5 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 91AA236295AE5C0E9FC0B193 /* Pods-japanese-letter-game-japanese-letter-gameUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
