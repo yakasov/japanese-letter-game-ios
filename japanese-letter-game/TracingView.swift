@@ -43,9 +43,30 @@ class TimerObject: ObservableObject {
     }
 }
 
+struct CanvasDisplay: View {
+    @ObservedObject var canvas: Canvas
+
+    init(canvas: Canvas) {
+        self.canvas = canvas
+    }
+
+    func convertCanvasToImage(view: UIView) -> UIImage {
+        let renderer = UIGraphicsImageRenderer(size: view.bounds.size)
+        return renderer.image { ctx in
+            view.drawHierarchy(in: view.bounds, afterScreenUpdates: true)
+        }
+    }
+
+    var body: some View {
+        ImageView(image: convertCanvasToImage(view: canvas))
+            .frame(width: 200, height: 200)
+    }
+}
+
 struct TracingView: View {
     @ObservedObject var timer: TimerObject
     @State var canvas = Canvas()
+    var debug = true
     
     init() {
         NSLog("Tracing init")
@@ -60,6 +81,9 @@ struct TracingView: View {
     
     public var body: some View {
         VStack(spacing: 0.0) {
+            if (debug) {
+                CanvasDisplay(canvas: canvas)
+            }
             ZStack {
                 Text(self.timer.characterPair.1)
                     .accessibilityIdentifier("mainText")

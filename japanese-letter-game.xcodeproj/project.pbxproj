@@ -16,6 +16,7 @@
 		0B5815132B10FC2900E927BF /* PairingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B5815122B10FC2900E927BF /* PairingView.swift */; };
 		0B5CD6EA2B6022410049C182 /* CanvasWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B5CD6E92B6022410049C182 /* CanvasWrapper.swift */; };
 		0BA9DFFA2B6FCBAF00158195 /* VisionWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BA9DFF92B6FCBAF00158195 /* VisionWrapper.swift */; };
+		0BA9DFFC2B7505E800158195 /* ImageViewWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BA9DFFB2B7505E800158195 /* ImageViewWrapper.swift */; };
 		0BD378202A9F895C008849D5 /* MainApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BD3781F2A9F895C008849D5 /* MainApp.swift */; };
 		0BD378222A9F895C008849D5 /* MatchingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BD378212A9F895C008849D5 /* MatchingView.swift */; };
 		0BD378262A9F895E008849D5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0BD378252A9F895E008849D5 /* Assets.xcassets */; };
@@ -55,6 +56,7 @@
 		0B5815122B10FC2900E927BF /* PairingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PairingView.swift; sourceTree = "<group>"; };
 		0B5CD6E92B6022410049C182 /* CanvasWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanvasWrapper.swift; sourceTree = "<group>"; };
 		0BA9DFF92B6FCBAF00158195 /* VisionWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisionWrapper.swift; sourceTree = "<group>"; };
+		0BA9DFFB2B7505E800158195 /* ImageViewWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewWrapper.swift; sourceTree = "<group>"; };
 		0BD3781C2A9F895C008849D5 /* japanese-letter-game.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "japanese-letter-game.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0BD3781F2A9F895C008849D5 /* MainApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainApp.swift; sourceTree = "<group>"; };
 		0BD378212A9F895C008849D5 /* MatchingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchingView.swift; sourceTree = "<group>"; };
@@ -96,7 +98,6 @@
 		0BD378132A9F895C008849D5 = {
 			isa = PBXGroup;
 			children = (
-				0BA9DFF92B6FCBAF00158195 /* VisionWrapper.swift */,
 				0B58150E2B10FA9200E927BF /* Launch Screen.storyboard */,
 				0BD3781E2A9F895C008849D5 /* japanese-letter-game */,
 				0BD378312A9F895E008849D5 /* japanese-letter-gameTests */,
@@ -118,6 +119,7 @@
 		0BD3781E2A9F895C008849D5 /* japanese-letter-game */ = {
 			isa = PBXGroup;
 			children = (
+				0BA9DFF92B6FCBAF00158195 /* VisionWrapper.swift */,
 				0BD378252A9F895E008849D5 /* Assets.xcassets */,
 				0B5815012B10EF4600E927BF /* Styles.swift */,
 				0BD3784B2A9F8F24008849D5 /* characters.json */,
@@ -130,6 +132,7 @@
 				0B5815032B10F19400E927BF /* SettingsView.swift */,
 				0B5815102B10FC0500E927BF /* TracingView.swift */,
 				0B5CD6E92B6022410049C182 /* CanvasWrapper.swift */,
+				0BA9DFFB2B7505E800158195 /* ImageViewWrapper.swift */,
 			);
 			path = "japanese-letter-game";
 			sourceTree = "<group>";
@@ -300,6 +303,7 @@
 				0B5815062B10F4B000E927BF /* LetterHandler.swift in Sources */,
 				0BA9DFFA2B6FCBAF00158195 /* VisionWrapper.swift in Sources */,
 				0BD378222A9F895C008849D5 /* MatchingView.swift in Sources */,
+				0BA9DFFC2B7505E800158195 /* ImageViewWrapper.swift in Sources */,
 				0B5815022B10EF4600E927BF /* Styles.swift in Sources */,
 				0BD378202A9F895C008849D5 /* MainApp.swift in Sources */,
 				0B5815112B10FC0500E927BF /* TracingView.swift in Sources */,
@@ -469,6 +473,7 @@
 				DEVELOPMENT_TEAM = D5LRB6WQJ2;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "This app needs to save images to your photo library for debugging purposes.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -498,6 +503,7 @@
 				DEVELOPMENT_TEAM = D5LRB6WQJ2;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "This app needs to save images to your photo library for debugging purposes.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

@@ -26,7 +26,7 @@ struct CanvasWrapper: UIViewRepresentable {
     }
 }
 
-class Canvas: UIView {
+class Canvas: UIView, ObservableObject {
     override func draw(_ rect: CGRect) {
         super.draw(rect)
 
