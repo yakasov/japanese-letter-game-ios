@@ -6,7 +6,9 @@ target 'japanese-letter-game' do
   use_frameworks!
 
   # Pods for japanese-letter-game
-  pod 'GoogleMLKit/TextRecognition'
+  pod 'GoogleMLKit/TextRecognition', '3.2.0'
+  pod 'GoogleMLKit/TextRecognitionJapanese', '3.2.0'
+  pod 'GoogleCloudVision'
 
   target 'japanese-letter-gameTests' do
     inherit! :search_paths

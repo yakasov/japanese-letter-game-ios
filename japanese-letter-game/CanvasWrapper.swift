@@ -2,6 +2,16 @@ import Foundation
 import SwiftUI
 import UIKit
 
+extension UIView {
+    func toImage() -> UIImage? {
+        UIGraphicsBeginImageContextWithOptions(self.bounds.size, false, UIScreen.main.scale)
+        drawHierarchy(in: self.bounds, afterScreenUpdates: true)
+        let image = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        return image
+    }
+}
+
 struct CanvasWrapper: UIViewRepresentable {
     @Binding var canvas: Canvas
     

@@ -1,4 +1,5 @@
 import MLKit
+import SwiftUI
 
 func convertCanvasToImage(view: UIView) -> UIImage {
     let renderer = UIGraphicsImageRenderer(size: view.bounds.size)
@@ -7,12 +8,22 @@ func convertCanvasToImage(view: UIView) -> UIImage {
     }
 }
 
+func convertToBase64(image: UIImage) -> String {
+  return image.jpegData(compressionQuality: 0.2)!.base64EncodedString()
+}
+
 func runMLKitRecognition(canvas: Canvas) {
 
     NSLog("Start runMLKitRecognition")
-    let uiImage = convertCanvasToImage(view: canvas)
+    // let renderer = ImageRenderer(content: canvas)
+    // let uiImage = renderer.uiImage
+//    let uiImage = canvas.frame(width: 300, height: 300).snapshot()
+    // let uiImage = convertCanvasToImage(view: canvas)
+    // let uiImage : UIImage = UIImage(named: "IMG_4747")!
+    let uiImage = canvas.toImage()!
+    UIImageWriteToSavedPhotosAlbum(uiImage, nil, nil, nil)
 
-    let image = VisionImage(image: uiImage)
+    let image = VisionImage(image: canvas.toImage()!)
     image.orientation = uiImage.imageOrientation
     let options = TextRecognizerOptions()
     let textRecognizer = TextRecognizer.textRecognizer(options: options)

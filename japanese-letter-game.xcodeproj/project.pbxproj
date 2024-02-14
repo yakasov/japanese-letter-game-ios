@@ -15,6 +15,9 @@
 		0B5815112B10FC0500E927BF /* TracingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B5815102B10FC0500E927BF /* TracingView.swift */; };
 		0B5815132B10FC2900E927BF /* PairingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B5815122B10FC2900E927BF /* PairingView.swift */; };
 		0B5CD6EA2B6022410049C182 /* CanvasWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B5CD6E92B6022410049C182 /* CanvasWrapper.swift */; };
+		0B663F4D2B7D0FA70092E329 /* IMG_4747.png in Resources */ = {isa = PBXBuildFile; fileRef = 0B663F4C2B7D0FA70092E329 /* IMG_4747.png */; };
+		0B663F4E2B7D194F0092E329 /* Pods_japanese_letter_game.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CD25C0DCED71C7B68440075 /* Pods_japanese_letter_game.framework */; };
+		0B663F4F2B7D194F0092E329 /* Pods_japanese_letter_game.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 6CD25C0DCED71C7B68440075 /* Pods_japanese_letter_game.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		0BA9DFFA2B6FCBAF00158195 /* VisionWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BA9DFF92B6FCBAF00158195 /* VisionWrapper.swift */; };
 		0BA9DFFC2B7505E800158195 /* ImageViewWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BA9DFFB2B7505E800158195 /* ImageViewWrapper.swift */; };
 		0BA9E0002B7A8C4400158195 /* MLKitWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BA9DFFF2B7A8C4400158195 /* MLKitWrapper.swift */; };
@@ -29,7 +32,6 @@
 		0BD3784D2A9F8F24008849D5 /* characters.json in Resources */ = {isa = PBXBuildFile; fileRef = 0BD3784B2A9F8F24008849D5 /* characters.json */; };
 		1EFDB4983BC293E2F85BAD6F /* Pods_japanese_letter_gameTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41817BA4F04D557AE19A8AF5 /* Pods_japanese_letter_gameTests.framework */; };
 		AF5C8DAD4E2CD3790BC97DD9 /* Pods_japanese_letter_game_japanese_letter_gameUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7359EC3F6287CF9A093EE25 /* Pods_japanese_letter_game_japanese_letter_gameUITests.framework */; };
-		B5FFFF1876BE315035458041 /* Pods_japanese_letter_game.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CD25C0DCED71C7B68440075 /* Pods_japanese_letter_game.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +51,20 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		0B663F502B7D194F0092E329 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				0B663F4F2B7D194F0092E329 /* Pods_japanese_letter_game.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		02BD14B904414A343F56067E /* Pods-japanese-letter-game.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-japanese-letter-game.debug.xcconfig"; path = "Target Support Files/Pods-japanese-letter-game/Pods-japanese-letter-game.debug.xcconfig"; sourceTree = "<group>"; };
 		0B50190A2B139A84004D0730 /* characters_order.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = characters_order.json; sourceTree = "<group>"; };
@@ -60,6 +76,7 @@
 		0B5815102B10FC0500E927BF /* TracingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TracingView.swift; sourceTree = "<group>"; };
 		0B5815122B10FC2900E927BF /* PairingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PairingView.swift; sourceTree = "<group>"; };
 		0B5CD6E92B6022410049C182 /* CanvasWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanvasWrapper.swift; sourceTree = "<group>"; };
+		0B663F4C2B7D0FA70092E329 /* IMG_4747.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = IMG_4747.png; sourceTree = "<group>"; };
 		0BA9DFF92B6FCBAF00158195 /* VisionWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisionWrapper.swift; sourceTree = "<group>"; };
 		0BA9DFFB2B7505E800158195 /* ImageViewWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewWrapper.swift; sourceTree = "<group>"; };
 		0BA9DFFF2B7A8C4400158195 /* MLKitWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MLKitWrapper.swift; sourceTree = "<group>"; };
@@ -89,7 +106,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B5FFFF1876BE315035458041 /* Pods_japanese_letter_game.framework in Frameworks */,
+				0B663F4E2B7D194F0092E329 /* Pods_japanese_letter_game.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -139,6 +156,7 @@
 			isa = PBXGroup;
 			children = (
 				0BA9DFF92B6FCBAF00158195 /* VisionWrapper.swift */,
+				0B663F4C2B7D0FA70092E329 /* IMG_4747.png */,
 				0BD378252A9F895E008849D5 /* Assets.xcassets */,
 				0B5815012B10EF4600E927BF /* Styles.swift */,
 				0BD3784B2A9F8F24008849D5 /* characters.json */,
@@ -219,6 +237,7 @@
 				0BD3781A2A9F895C008849D5 /* Resources */,
 				592725F1E7599003A1CDDD66 /* [CP] Embed Pods Frameworks */,
 				FDE4C98BFB38EF04A29FA82C /* [CP] Copy Pods Resources */,
+				0B663F502B7D194F0092E329 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -318,6 +337,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0B50190B2B139A84004D0730 /* characters_order.json in Resources */,
+				0B663F4D2B7D0FA70092E329 /* IMG_4747.png in Resources */,
 				0BD3784C2A9F8F24008849D5 /* characters.json in Resources */,
 				0BD378292A9F895E008849D5 /* Preview Assets.xcassets in Resources */,
 				0B58150F2B10FA9200E927BF /* Launch Screen.storyboard in Resources */,
@@ -583,7 +603,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -640,7 +660,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
@@ -669,6 +689,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -701,6 +722,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

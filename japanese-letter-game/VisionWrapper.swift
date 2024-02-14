@@ -11,10 +11,12 @@ import Vision
 func runVisionRecognition(canvas: Canvas) {
 
     NSLog("Start runVisionRecognition")
-    let uiImage = convertCanvasToImage(view: canvas)
-    guard let cgImage = uiImage.cgImage else { return }
-
+    //let uiImage = convertCanvasToImage(view: canvas)
+    let uiImage = canvas.toImage()!
     UIImageWriteToSavedPhotosAlbum(uiImage, nil, nil, nil)
+    guard let cgImage = uiImage.cgImage else { return }
+    print("YUH!")
+
     let requestHandler = VNImageRequestHandler(cgImage: cgImage, options: [:])
     let request = VNRecognizeTextRequest(completionHandler: recognizeTextHandler)
     request.recognitionLevel = .accurate

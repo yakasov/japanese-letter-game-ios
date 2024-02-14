@@ -6,11 +6,12 @@ class TimerObject: ObservableObject {
     @Published var characterPair: (String, String) = ("", "")
     @Published var screenTouched: Bool = true
     var timer: DispatchSourceTimer?
-    var canvas: Canvas
+    @Published var canvas: Canvas
     
 
     init(canvas: Canvas) {
         self.canvas = canvas;
+        print(ObjectIdentifier(canvas))
         setupTimer()
     }
 
@@ -27,11 +28,12 @@ class TimerObject: ObservableObject {
                 if !self.screenTouched {
                     if self.timePassed > 3.0 {
                         NSLog("Passed 3.0 seconds")
-                        runMLKitRecognition(canvas: self.canvas)
+                        print(ObjectIdentifier(self.canvas))
+                        runVisionRecognition(canvas: self.canvas)
                         NSLog("Post runMLKitRecognition")
                         self.screenTouched = true
                         self.setCharacters()
-                        self.canvas.resetPaths()
+                        // self.canvas.resetPaths()
                     }
                     self.timePassed += 0.1
                 } else {
@@ -43,53 +45,33 @@ class TimerObject: ObservableObject {
     }
 }
 
-struct CanvasDisplay: View {
-    @ObservedObject var canvas: Canvas
-
-    init(canvas: Canvas) {
-        self.canvas = canvas
-    }
-
-    func convertCanvasToImage(view: UIView) -> UIImage {
-        let renderer = UIGraphicsImageRenderer(size: view.bounds.size)
-        return renderer.image { ctx in
-            view.drawHierarchy(in: view.bounds, afterScreenUpdates: true)
-        }
-    }
-
-    var body: some View {
-        ImageView(image: convertCanvasToImage(view: canvas))
-            .frame(width: 200, height: 200)
-    }
-}
-
 struct TracingView: View {
     @ObservedObject var timer: TimerObject
-    @State var canvas = Canvas()
-    var debug = true
     
     init() {
         NSLog("Tracing init")
         let canvas = Canvas()
+        print(ObjectIdentifier(canvas))
         self.timer = TimerObject(canvas: canvas)
         self.timer.setCharacters()
+        
         canvas.onTouchesBegan = { [self] in timer.screenTouched = true }
-        canvas.onTouchesEnded = { [self] in timer.screenTouched = false }
-        _canvas = State<Canvas>(initialValue: canvas)
+        canvas.onTouchesEnded = { [self] in
+            timer.screenTouched = false
+            timer.canvas = canvas
+        }
 
     }
     
+    
     public var body: some View {
         VStack(spacing: 0.0) {
-            if (debug) {
-                CanvasDisplay(canvas: canvas)
-            }
             ZStack {
                 Text(self.timer.characterPair.1)
                     .accessibilityIdentifier("mainText")
                     .foregroundColor(.gray)
                     .font(.system(size: 216))
-                CanvasWrapper(canvas: $canvas)
+                CanvasWrapper(canvas: self.$timer.canvas)
             }
             Spacer()
             Text(self.timer.characterPair.0)
