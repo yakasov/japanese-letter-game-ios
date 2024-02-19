@@ -8,18 +8,26 @@ func convertCanvasToImage(view: UIView) -> UIImage {
     }
 }
 
-func runVisionRecognition(canvas: Canvas) {
+func runVisionRecognition(canvas: Canvas, completion: @escaping ((String?) -> Void)) {
 
-    NSLog("Start runVisionRecognition")
+    canvas.backgroundColor = .white
     let uiImage = convertCanvasToImage(view: canvas)
+    canvas.backgroundColor = .clear
     guard let cgImage = uiImage.cgImage else { return }
 
-    UIImageWriteToSavedPhotosAlbum(uiImage, nil, nil, nil)
     let requestHandler = VNImageRequestHandler(cgImage: cgImage, options: [:])
-    let request = VNRecognizeTextRequest(completionHandler: recognizeTextHandler)
+    let request = VNRecognizeTextRequest { (request, error) in
+        guard let observations = request.results as? [VNRecognizedTextObservation] else {
+            print("No results:", request.results ?? "nil")
+            completion(nil)
+            return
+        }
+        
+        let topCandidate = observations.compactMap({ $0.topCandidates(1).first?.string }).first
+        completion(topCandidate)
+    }
     request.recognitionLevel = .accurate
-    request.recognitionLanguages = ["en-US", "ja-JP"]
-    request.usesLanguageCorrection = true
+    request.recognitionLanguages = ["ja-JP"]
     
     do {
         try requestHandler.perform([request])
@@ -28,15 +36,3 @@ func runVisionRecognition(canvas: Canvas) {
     }
 }
 
-func recognizeTextHandler(request: VNRequest, error: Error?) {
-    guard let observations = request.results as? [VNRecognizedTextObservation] else {
-        print("No results:", request.results ?? "nil")
-        return
-    }
-    
-    for observation in observations {
-        print("Observation:", observation)
-        let candidate = observation.topCandidates(1).first
-        print("Top candidate: \(candidate?.string ?? "nil") with confidence \(candidate?.confidence ?? 0)")
-    }
-}

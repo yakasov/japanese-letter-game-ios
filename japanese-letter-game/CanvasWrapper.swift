@@ -43,9 +43,11 @@ class Canvas: UIView, ObservableObject {
             }
         }
 
+        context.setStrokeColor(UIColor.black.cgColor)
         context.setLineWidth(8)
         context.setLineCap(.square)
         context.strokePath()
+        context.setBlendMode(.normal)
     }
 
     @Published var paths = [Path]()

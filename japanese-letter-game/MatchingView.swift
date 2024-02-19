@@ -87,8 +87,8 @@ struct MatchingView: View {
     }
 
     public func compareCharacters(input: String) {
-        lowerTextString = String(
-            "\(buttonStrings.correctPair) -> \(input == buttonStrings.correctPair.1 as! String)")
+        lowerTextString = input == buttonStrings.correctPair.1 as! String ?
+            "Correct!" : "\(buttonStrings.correctPair)"
         buttonStrings.randomiseButtons()
     }
 }
