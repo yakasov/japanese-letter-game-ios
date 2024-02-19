@@ -1,14 +1,15 @@
 import SwiftUI
 import UIKit
+import Combine
 
 class TimerObject: ObservableObject {
     @Published var timePassed: Double = 0.0
     @Published var characterPair: (String, String) = ("", "")
+    @Published var result: String = ""
     @Published var screenTouched: Bool = true
     var timer: DispatchSourceTimer?
     var canvas: Canvas
     
-
     init(canvas: Canvas) {
         self.canvas = canvas;
         setupTimer()
@@ -25,10 +26,14 @@ class TimerObject: ObservableObject {
             DispatchQueue.main.async {
                 guard let self = self else { return }
                 if !self.screenTouched {
-                    if self.timePassed > 3.0 {
-                        NSLog("Passed 3.0 seconds")
-                        runVisionRecognition(canvas: self.canvas)
-                        NSLog("Post runVisionRecognition")
+                    if self.timePassed > 1.5 {
+                        runVisionRecognition(canvas: self.canvas) { [weak self] (topCandidateString) in
+                            guard let topCandidateString = topCandidateString else {
+                                self?.result = "_"
+                                return
+                            }
+                            self?.result =  topCandidateString
+                        }
                         self.screenTouched = true
                         self.setCharacters()
                         self.canvas.resetPaths()
@@ -43,59 +48,56 @@ class TimerObject: ObservableObject {
     }
 }
 
-struct CanvasDisplay: View {
-    @ObservedObject var canvas: Canvas
-
-    init(canvas: Canvas) {
-        self.canvas = canvas
-    }
-
-    func convertCanvasToImage(view: UIView) -> UIImage {
-        let renderer = UIGraphicsImageRenderer(size: view.bounds.size)
-        return renderer.image { ctx in
-            view.drawHierarchy(in: view.bounds, afterScreenUpdates: true)
-        }
-    }
-
-    var body: some View {
-        ImageView(image: convertCanvasToImage(view: canvas))
-            .frame(width: 200, height: 200)
-    }
-}
-
 struct TracingView: View {
     @ObservedObject var timer: TimerObject
     @State var canvas = Canvas()
-    var debug = true
+    @State var resultText: String = ""
+    @State var firstRun: Bool = true
+    @State var correctInARow: Int = 0
     
     init() {
-        NSLog("Tracing init")
         let canvas = Canvas()
         self.timer = TimerObject(canvas: canvas)
         self.timer.setCharacters()
         canvas.onTouchesBegan = { [self] in timer.screenTouched = true }
         canvas.onTouchesEnded = { [self] in timer.screenTouched = false }
         _canvas = State<Canvas>(initialValue: canvas)
-
     }
     
     public var body: some View {
         VStack(spacing: 0.0) {
-            if (debug) {
-                CanvasDisplay(canvas: canvas)
-            }
             ZStack {
-                Text(self.timer.characterPair.1)
+                Text(self.correctInARow >= 3 ? "" : self.timer.characterPair.1)
                     .accessibilityIdentifier("mainText")
                     .foregroundColor(.gray)
+                    .background(.clear)
                     .font(.system(size: 216))
                 CanvasWrapper(canvas: $canvas)
             }
             Spacer()
-            Text(self.timer.characterPair.0)
-                .offset(y: -100)
+            VStack {
+                Text(self.timer.characterPair.0)
+                    .offset(y: -100)
+                    .foregroundColor(.gray)
+                    .font(.system(size: 32))
+                Text(resultText)
+                    .onReceive(timer.$result) { newValue in
+                        if self.firstRun {
+                            self.firstRun = false
+                        } else {
+                            if newValue.contains(self.timer.characterPair.1) {
+                                self.resultText = "Vision sees \(self.timer.characterPair.1)!"
+                                self.correctInARow += 1
+                            } else {
+                                self.resultText = "Vision does not see \(self.timer.characterPair.1)."
+                                self.correctInARow = 0
+                            }
+                        }
+                    }
+                .offset(y: -90)
                 .foregroundColor(.gray)
                 .font(.system(size: 32))
+            }
         }
     }
 }
