@@ -71,7 +71,7 @@ struct TracingView: View {
                     .accessibilityIdentifier("mainText")
                     .foregroundColor(.gray)
                     .background(.clear)
-                    .font(.system(size: 216))
+                    .font(.system(size: 256))
                 CanvasWrapper(canvas: $canvas)
             }
             Spacer()

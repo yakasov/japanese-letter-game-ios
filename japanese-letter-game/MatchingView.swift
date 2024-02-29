@@ -7,6 +7,7 @@ class ButtonStrings: ObservableObject {
     @Published public var button2String: String = ""
     @Published public var button3String: String = ""
     @Published public var button4String: String = ""
+    @Published public var lastPair: (String, Any) = ("", "")
 
     init() {
         randomiseButtons()
@@ -22,7 +23,10 @@ class ButtonStrings: ObservableObject {
     }
 
     public func randomiseCorrectButton() {
-        correctPair = getCharacterPair()
+        while (correctPair.0 == lastPair.0) {
+            correctPair = getCharacterPair()
+        }
+        lastPair = correctPair
         let randomIndex = Int.random(in: 1...4)
 
         switch randomIndex {
@@ -51,6 +55,7 @@ struct MatchingView: View {
                 Text(lowerTextString)
                     .accessibilityIdentifier("lowerText")
                     .foregroundColor(.black)
+                    .font(.system(size: 24))
                 HStack(alignment: .center) {
                     Button(action: {
                         compareCharacters(input: buttonStrings.button1String)
@@ -88,7 +93,7 @@ struct MatchingView: View {
 
     public func compareCharacters(input: String) {
         lowerTextString = input == buttonStrings.correctPair.1 as! String ?
-            "Correct!" : "\(buttonStrings.correctPair)"
+        "Correct!" : "\(buttonStrings.correctPair.0) is \(buttonStrings.correctPair.1)"
         buttonStrings.randomiseButtons()
     }
 }
