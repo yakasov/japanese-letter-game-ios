@@ -23,7 +23,6 @@ class PairingStrings: ObservableObject {
             pairs[i].0 = "\(p1.0)\(p2.0)\(p3.0)"
             pairs[i].1 = "\(p1.1)\(p2.1)\(p3.1)"
 
-            
             idPairings[i * 2] = i * 2 + 1
             idPairings[i * 2 + 1] = i * 2
         }
@@ -109,8 +108,7 @@ class DraggableRectangle: UIView {
         }
 
         if let overlappingRectangle = overlappingRectangle,
-            overlappingRectangle.tag == viewController?.pairingStrings.idPairings[tag]
-        {
+            overlappingRectangle.tag == viewController?.pairingStrings.idPairings[tag] {
             removeFromSuperview()
             overlappingRectangle.removeFromSuperview()
         } else {

@@ -4,19 +4,19 @@ import UIKit
 
 struct CanvasWrapper: UIViewRepresentable {
     @Binding var canvas: Canvas
-    
+
     func makeUIView(context: Context) -> UIView {
         return canvas
     }
-    
+
     func updateUIView(_ uiView: UIView, context: Context) {
         uiView.backgroundColor = .clear
     }
-    
+
     func makeCoordinator() -> Coordinator {
         Coordinator(self)
     }
-    
+
     class Coordinator: NSObject {
         var parent: CanvasWrapper
 
@@ -58,7 +58,7 @@ class Canvas: UIView, ObservableObject {
         guard let point = touches.first?.location(in: self) else { return }
         paths.append(Path(type: .move, point: point))
         setNeedsDisplay()
-        
+
         onTouchesBegan?()
     }
 
@@ -67,13 +67,13 @@ class Canvas: UIView, ObservableObject {
         paths.append(Path(type: .line, point: point))
         setNeedsDisplay()
     }
-    
+
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         super.touchesEnded(touches, with: event)
 
         onTouchesEnded?()
     }
-    
+
     func resetPaths() {
         paths = [Path]()
         setNeedsDisplay()
@@ -83,11 +83,6 @@ class Canvas: UIView, ObservableObject {
 struct Path {
     let type: PathType
     let point: CGPoint
-
-    init(type: PathType, point: CGPoint) {
-        self.type = type
-        self.point = point
-    }
 
     enum PathType {
         case move

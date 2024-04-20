@@ -9,9 +9,9 @@ class TimerObject: ObservableObject {
     @Published var screenTouched: Bool = true
     var timer: DispatchSourceTimer?
     var canvas: Canvas
-    
+
     init(canvas: Canvas) {
-        self.canvas = canvas;
+        self.canvas = canvas
         setupTimer()
     }
 
@@ -54,7 +54,7 @@ struct TracingView: View {
     @State var resultText: String = ""
     @State var firstRun: Bool = true
     @State var correctInARow: Int = 0
-    
+
     init() {
         let canvas = Canvas()
         self.timer = TimerObject(canvas: canvas)
@@ -63,7 +63,7 @@ struct TracingView: View {
         canvas.onTouchesEnded = { [self] in timer.screenTouched = false }
         _canvas = State<Canvas>(initialValue: canvas)
     }
-    
+
     public var body: some View {
         VStack(spacing: 0.0) {
             ZStack {

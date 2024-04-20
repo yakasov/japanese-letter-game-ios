@@ -23,7 +23,7 @@ class ButtonStrings: ObservableObject {
     }
 
     public func randomiseCorrectButton() {
-        while (correctPair.0 == lastPair.0) {
+        while correctPair.0 == lastPair.0 {
             correctPair = getCharacterPair()
         }
         lastPair = correctPair

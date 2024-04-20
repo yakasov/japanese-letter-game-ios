@@ -80,7 +80,7 @@ struct SettingsView: View {
                             get: { UserDefaults.standard.bool(forKey: "swapLanguages") },
                             set: { newValue in
                                 UserDefaults.standard.set(newValue, forKey: "swapLanguages")
-                                swapLanguages = newValue 
+                                swapLanguages = newValue
                             }
                         ))
                     }

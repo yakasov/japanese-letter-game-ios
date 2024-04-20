@@ -7,11 +7,9 @@ private var currentRandomCharacters: [String] = []
 private func readJSONFile(path: String) -> [String: Any] {
     do {
         if let bundlePath = Bundle.main.path(forResource: path, ofType: "json"),
-            let jsonData = try String(contentsOfFile: bundlePath).data(using: .utf8)
-        {
+            let jsonData = try String(contentsOfFile: bundlePath).data(using: .utf8) {
             if let json = try JSONSerialization.jsonObject(with: jsonData, options: .mutableLeaves)
-                as? [String: Any]
-            {
+                as? [String: Any] {
                 return json
             }
         }
@@ -33,9 +31,9 @@ public func getAllowedCharacters() -> [String: Any] {
 public func getFlattenedCharacters() -> [String: Any] {
     /// Flattens the result of getAllowedCharacters() into
     /// an array of [ "English": "Hiragana", ... ] for easy picking.
-    
+
     let shouldSwap = UserDefaults.standard.bool(forKey: "swapLanguages")
-    
+
     return Dictionary(
         getAllowedCharacters().values
             .compactMap { value -> [[String: String]]? in
@@ -63,7 +61,7 @@ public func getRandomCharacter() -> String {
     if currentRandomCharacters.count >= 4 {
         currentRandomCharacters = []
     }
-    
+
     let characterDictionary: [String: Any] = getFlattenedCharacters()
     var randomCharacter: String = characterDictionary.randomElement()!.value as! String
     while currentRandomCharacters.contains(randomCharacter) {
