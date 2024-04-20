@@ -85,7 +85,7 @@ struct TracingView: View {
                         if self.firstRun {
                             self.firstRun = false
                         } else {
-                            if newValue.contains(self.timer.characterPair.1) {
+                            if newValue.lowercased().contains(self.timer.characterPair.1.lowercased()) {
                                 self.resultText = "Vision sees \(self.timer.characterPair.1)!"
                                 self.correctInARow += 1
                             } else {

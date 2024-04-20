@@ -46,14 +46,12 @@ struct MatchingView: View {
     public var body: some View {
         VStack(alignment: .center, spacing: 0.0) {
             Text(buttonStrings.correctPair.0)
-                .accessibilityIdentifier("mainText")
                 .foregroundColor(.black)
                 .font(.system(size: 48))
             Spacer()
                 .frame(height: 0)
             VStack(alignment: .center) {
                 Text(lowerTextString)
-                    .accessibilityIdentifier("lowerText")
                     .foregroundColor(.black)
                     .font(.system(size: 24))
                 HStack(alignment: .center) {

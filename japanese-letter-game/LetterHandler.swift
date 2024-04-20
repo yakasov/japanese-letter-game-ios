@@ -33,15 +33,18 @@ public func getAllowedCharacters() -> [String: Any] {
 public func getFlattenedCharacters() -> [String: Any] {
     /// Flattens the result of getAllowedCharacters() into
     /// an array of [ "English": "Hiragana", ... ] for easy picking.
+    
+    let shouldSwap = UserDefaults.standard.bool(forKey: "swapLanguages")
+    
     return Dictionary(
         getAllowedCharacters().values
-            .compactMap { value -> [[String: Any]]? in
+            .compactMap { value -> [[String: String]]? in
                 let array = value as? [Any]
-                return array?.compactMap { $0 as? [String: Any] }
+                return array?.compactMap { $0 as? [String: String] }
             }
             .joined()
             .map { dictionary in
-                dictionary.map { ($0.key, $0.value) }
+                dictionary.map { shouldSwap ? ($0.value, $0.key) : ($0.key, $0.value) }
             }
             .joined(),
         uniquingKeysWith: { (_, last) in last }

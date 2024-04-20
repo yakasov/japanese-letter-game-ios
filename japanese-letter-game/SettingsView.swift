@@ -45,7 +45,7 @@ struct SettingsView: View {
 
     @ObservedObject private var characterRowToggles: CharacterRowToggles = CharacterRowToggles()
     @State private var isToggleSectionExpanded: Bool = false
-    @State private var exampleToggleBool: Bool = true
+    @State private var swapLanguages: Bool = false
 
     public var body: some View {
         NavigationView {
@@ -76,8 +76,13 @@ struct SettingsView: View {
                     }
 
                     Section("More Settings") {
-                        Text("Bosh")
-                        Toggle("Label", isOn: $exampleToggleBool)
+                        Toggle("Swap English and Japanese", isOn: Binding(
+                            get: { UserDefaults.standard.bool(forKey: "swapLanguages") },
+                            set: { newValue in
+                                UserDefaults.standard.set(newValue, forKey: "swapLanguages")
+                                swapLanguages = newValue 
+                            }
+                        ))
                     }
                 }
             }

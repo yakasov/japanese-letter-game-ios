@@ -26,8 +26,11 @@ func runVisionRecognition(canvas: Canvas, completion: @escaping ((String?) -> Vo
         let topCandidate = observations.compactMap({ $0.topCandidates(1).first?.string }).first
         completion(topCandidate)
     }
+    
+    let shouldSwap = UserDefaults.standard.bool(forKey: "swapLanguages")
+    
     request.recognitionLevel = .accurate
-    request.recognitionLanguages = ["ja-JP"]
+    request.recognitionLanguages = shouldSwap ? ["en-US"] : ["ja-JP"]
     
     do {
         try requestHandler.perform([request])
