@@ -87,6 +87,7 @@ struct SettingsView: View {
                 }
             }
         }
+        .accessibilityIdentifier("SettingsViewIdentifier")
     }
 }
 

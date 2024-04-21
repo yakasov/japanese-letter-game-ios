@@ -60,6 +60,9 @@ struct MatchingView: View {
                     }) {
                         Text(buttonStrings.button1String)
                     }
+                    .accessibilityIdentifier(
+                        buttonStrings.button1String == (buttonStrings.correctPair.1 as? String)
+                            ? "correctButton" : "button1")
                     Spacer()
                         .frame(width: 10)
                     Button(action: {
@@ -67,6 +70,9 @@ struct MatchingView: View {
                     }) {
                         Text(buttonStrings.button2String)
                     }
+                    .accessibilityIdentifier(
+                        buttonStrings.button2String == (buttonStrings.correctPair.1 as? String)
+                            ? "correctButton" : "button2")
                 }
                 HStack(alignment: .center) {
                     Button(action: {
@@ -74,6 +80,9 @@ struct MatchingView: View {
                     }) {
                         Text(buttonStrings.button3String)
                     }
+                    .accessibilityIdentifier(
+                        buttonStrings.button3String == (buttonStrings.correctPair.1 as? String)
+                            ? "correctButton" : "button3")
                     Spacer()
                         .frame(width: 10)
                     Button(action: {
@@ -81,17 +90,22 @@ struct MatchingView: View {
                     }) {
                         Text(buttonStrings.button4String)
                     }
+                    .accessibilityIdentifier(
+                        buttonStrings.button4String == (buttonStrings.correctPair.1 as? String)
+                            ? "correctButton" : "button4")
                 }
             }
             .buttonStyle(LetterButtonStyle())
             .offset(y: 150)
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
+        //.accessibilityIdentifier("MatchingViewIdentifier")
     }
 
     public func compareCharacters(input: String) {
-        lowerTextString = input == buttonStrings.correctPair.1 as! String ?
-        "Correct!" : "\(buttonStrings.correctPair.0) is \(buttonStrings.correctPair.1)"
+        lowerTextString =
+            input == buttonStrings.correctPair.1 as! String
+            ? "Correct!" : "\(buttonStrings.correctPair.0) is \(buttonStrings.correctPair.1)"
         buttonStrings.randomiseButtons()
     }
 }

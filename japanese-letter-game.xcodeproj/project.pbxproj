@@ -117,19 +117,19 @@
 		0BD3781E2A9F895C008849D5 /* japanese-letter-game */ = {
 			isa = PBXGroup;
 			children = (
-				0BA9DFF92B6FCBAF00158195 /* VisionWrapper.swift */,
-				0BD378252A9F895E008849D5 /* Assets.xcassets */,
-				0B5815012B10EF4600E927BF /* Styles.swift */,
-				0BD3784B2A9F8F24008849D5 /* characters.json */,
 				0B50190A2B139A84004D0730 /* characters_order.json */,
+				0BD3784B2A9F8F24008849D5 /* characters.json */,
+				0B5CD6E92B6022410049C182 /* CanvasWrapper.swift */,
 				0B5815052B10F4B000E927BF /* LetterHandler.swift */,
 				0BD3781F2A9F895C008849D5 /* MainApp.swift */,
 				0BD378212A9F895C008849D5 /* MatchingView.swift */,
 				0B5815122B10FC2900E927BF /* PairingView.swift */,
-				0BD378272A9F895E008849D5 /* Preview Content */,
 				0B5815032B10F19400E927BF /* SettingsView.swift */,
+				0B5815012B10EF4600E927BF /* Styles.swift */,
 				0B5815102B10FC0500E927BF /* TracingView.swift */,
-				0B5CD6E92B6022410049C182 /* CanvasWrapper.swift */,
+				0BA9DFF92B6FCBAF00158195 /* VisionWrapper.swift */,
+				0BD378252A9F895E008849D5 /* Assets.xcassets */,
+				0BD378272A9F895E008849D5 /* Preview Content */,
 			);
 			path = "japanese-letter-game";
 			sourceTree = "<group>";
@@ -463,6 +463,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"japanese-letter-game/Preview Content\"";
@@ -473,6 +474,7 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -493,6 +495,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"japanese-letter-game/Preview Content\"";
@@ -503,6 +506,7 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (

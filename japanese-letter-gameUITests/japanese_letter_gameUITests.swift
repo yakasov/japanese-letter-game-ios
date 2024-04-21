@@ -1,33 +1,52 @@
-//
-//  japanese_letter_gameUITests.swift
-//  japanese-letter-gameUITests
-//
-//  Created by Angel on 30/08/2023.
-//
-
 import XCTest
 
 final class japanese_letter_gameUITests: XCTestCase {
 
     override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-
-        // In UI tests it is usually best to stop immediately when a failure occurs.
-        continueAfterFailure = false
-
-        // In UI tests it’s important to set the initial state - such as interface orientation - required for your tests before they run. The setUp method is a good place to do this.
-    }
-
-    override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-    }
-
-    func testExample() throws {
-        // UI tests must launch the application that they test.
         let app = XCUIApplication()
         app.launch()
+        sleep(1)
+        continueAfterFailure = false
+    }
 
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    func testViewSwitching() {
+        /// Test each view can be swapped to without waiting.
+        let app = XCUIApplication()
+
+        app.buttons["Matching"].tap()
+        // XCTAssertTrue(app.staticTexts["MatchingViewIdentifier"].exists)
+
+        app.buttons["Tracing"].tap()
+        XCTAssertTrue(app.staticTexts["TracingViewIdentifier"].exists)
+
+        app.buttons["Pairing"].tap()
+        XCTAssertTrue(app.otherElements["PairingViewIdentifier"].exists)
+
+        app.buttons["Settings"].tap()
+        XCTAssertTrue(app.otherElements["SettingsViewIdentifier"].exists)
+    }
+
+    func testCorrectAnswerUIUpdate() {
+        let app = XCUIApplication()
+        app.buttons["Matching"].tap()
+
+        let correctButton = app.buttons["correctButton"]
+        correctButton.tap()
+        XCTAssertTrue(app.staticTexts["Correct!"].exists)
+    }
+
+    func testIncorrectAnswerUIUpdate() {
+        let app = XCUIApplication()
+
+        let allButtons = app.buttons.matching(identifier: "button")
+        let correctButton = app.buttons["correctButton"]
+
+        let incorrectButtons = allButtons.allElementsBoundByIndex.filter {
+            $0.identifier != correctButton.identifier
+        }
+        let incorrectButton = incorrectButtons.first
+        incorrectButton?.tap()
+        XCTAssertFalse(app.staticTexts["Correct!"].exists)
     }
 
     func testLaunchPerformance() throws {

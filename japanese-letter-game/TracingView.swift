@@ -99,6 +99,7 @@ struct TracingView: View {
                 .font(.system(size: 32))
             }
         }
+        .accessibilityIdentifier("TracingViewIdentifier")
     }
 }
 
