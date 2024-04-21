@@ -109,7 +109,3 @@ struct MatchingView: View {
         buttonStrings.randomiseButtons()
     }
 }
-
-#Preview {
-    MatchingView()
-}

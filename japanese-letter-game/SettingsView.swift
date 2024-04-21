@@ -90,7 +90,3 @@ struct SettingsView: View {
         .accessibilityIdentifier("SettingsViewIdentifier")
     }
 }
-
-#Preview {
-    SettingsView()
-}

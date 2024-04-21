@@ -132,7 +132,3 @@ struct PairingView: UIViewControllerRepresentable {
 
     func updateUIViewController(_ uiViewController: PairingViewController, context: Context) {}
 }
-
-#Preview {
-    PairingViewController()
-}

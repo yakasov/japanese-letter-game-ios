@@ -102,7 +102,3 @@ struct TracingView: View {
         .accessibilityIdentifier("TracingViewIdentifier")
     }
 }
-
-#Preview {
-    TracingView()
-}
