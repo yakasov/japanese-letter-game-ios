@@ -12,16 +12,16 @@ final class japanese_letter_gameUITests: XCTestCase {
     func testViewSwitching() {
         /// Test each view can be swapped to without waiting.
         let app = XCUIApplication()
-
+        
         app.buttons["Matching"].tap()
         // XCTAssertTrue(app.staticTexts["MatchingViewIdentifier"].exists)
-
+        
         app.buttons["Tracing"].tap()
         XCTAssertTrue(app.staticTexts["TracingViewIdentifier"].exists)
-
+        
         app.buttons["Pairing"].tap()
         XCTAssertTrue(app.otherElements["PairingViewIdentifier"].exists)
-
+        
         app.buttons["Settings"].tap()
         XCTAssertTrue(app.otherElements["SettingsViewIdentifier"].exists)
     }
